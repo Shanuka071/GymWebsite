@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A.S.P. Fitness Center</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    body {
+      background-color: #111;
+      color: white;
+      line-height: 1.6;
+    }
+    
+    
+    header {
+      background-color: #00cc44;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo{
+        align-content: space-between;
+        /* backgroundcolour */
+        
+    }
+    
+    .logo1 {
+ 
+      width:150px;
+      height: 100px;
+      /*background-color*/
+     /* margin-right:;*/
+      margin-bottom: 20px;
+      align-content:space-between;
+      
+      background-repeat: no-repeat;
+      background-size :150px;
+      background-image: url(A_._S_._P_.-removebg-preview.png);
+    }
+    .logo2{
+        font-size: 28px;
+        font-weight: 800;
+        color: #000;
+        letter-spacing: 1px;
+        margin-right: 40px;
+        width: 100px;
+
+    }
+    
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    
+    nav ul li a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s;
+      position: relative;
+    }
+    
+    nav ul li a:hover {
+      color: #fff;
+    }
+    
+    .join-btn {
+      background-color: #000;
+      color: #fff;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 16px;
+    }
+    
+    .join-btn:hover {
+      background-color: #333;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+      text-align: center;
+      padding: 0 5%;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url(Fitness\ Gym\ Facebook\ Cover.png) no-repeat center center;
+      background-size: cover;
+    }
+    
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #00cc44;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+    
+    
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+    
+    .stat-item1{
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 42px;
+      font-weight: 700;
+      color: #00cc44;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      font-size: 16px;
+      color: #ccc;
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px;
+      }
+      
+      nav {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      
+      .join-btn {
+        margin-top: 15px;
+      }
+      
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .hero p {
+        font-size: 16px;
+      }
+      
+      .stats {
+        gap: 20px;
+      }
+      
+      .stat-number {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <div class="logo1">
+            <div class="logo2">
+            
+            </div>
+        </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Shanuka3.html">About</a></li>
+        <li><a href="Shanuka4.html">Trainers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="join-btn">Join Now</button>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Your Fitness Journey Starts Here</h1>
+    <p>Join A.S.P. Fitness Center and transform your body with our expert trainers and make changes on your ownself.</p>
+    
+    <div class="stats">
+      <div class="stat-item1">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Gym Access</div>
+      </div>
+      <div class="stat-item1">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Training Programs</div>
+      </div>
+      <div class="stat-item1">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Results Guaranteed</div>
+      </div>
+    </div>
+    
+    <button class="join-btn pulse">Start Your Journey</button>
+  </section>
+</body>
+</html>
