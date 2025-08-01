@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - A.S.P. Fitness Center</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000000;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 204, 102, 0.2);
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .join-btn {
+      background-color: #000;
+      color: #fff;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 16px;
+    }
+    
+    .join-btn:hover {
+      background-color: #333;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: #00cc66;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #00cc66;
+        }
+        
+        .nav-links a.active {
+            color: #00cc66;
+            border-bottom: 2px solid #00cc66;
+            padding-bottom: 5px;
+        }
+        
+        /* Main Content */
+        .ASPmain-content {
+            padding-top: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 50px;
+        }
+        
+        /* Hero Section */
+        .ASPhero {
+            text-align: center;
+            margin-bottom: 60px;
+             background: url(Gym2photo.2.jpg) no-repeat center center/cover;
+        }
+        
+        .ASPhero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .ASPhero h2 {
+            font-size: 24px;
+            color: #00cc66;
+            margin-bottom: 30px;
+        }
+        
+        .ASPhero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: #cccccc;
+        }
+        
+        .underline-green {
+            border-bottom: 3px solid #00cc66;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        
+        /* Facilities Section */
+        .facilities {
+            margin: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .facility-card {
+            background-color: #111111;
+            padding: 25px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .facility-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 204, 102, 0.1);
+        }
+        
+        .facility-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .facility-card h3 {
+            color: #00cc66;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .facility-card p {
+            color: #cccccc;
+            font-size: 16px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            margin: 80px 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            background-color: #111111;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .quote {
+            font-size: 24px;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 0 0 10px #00cc66;
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .stat-item {
+            padding: 30px;
+        }
+        
+        .stat-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #00cc66;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00cc66;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            color: #cccccc;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #000000;
+            padding: 60px 20px 30px;
+            border-top: 1px solid #00cc66;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            color: #00cc66;
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            color: #00cc66;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #00cc66;
+        }
+        
+        .footer-contact p {
+            color: #cccccc;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: #00cc66;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333333;
+            color: #cccccc;
+            font-size: 14px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">A.S.P. <span>Fitness Center</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="Shanuka4.html">Trainer</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="join-btn">Join Now</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="ASPmain-content">
+        <!-- Hero Section -->
+        <section class="ASPhero">
+            <h1 class="underline-green">Who We Are</h1>
+            <h2>Discipline, Strength, Transformation.</h2>
+            <p>At A.S.P. Fitness Center, we empower individuals to transform their bodies and minds through dedication, support, and expert guidance. We are helping you to make your morality within inside you.We are helping you to motivate your self for a sustainable life style.</p>
+        </section>
+
+        <!-- Facilities Section -->
+        <section class="facilities">
+            <h2 class="section-title">Our Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Modern Weightlifting Area</h3>
+                    <h2>Unleash your strength.......</h2><!--Some additional details to the website-->
+
+                    <p>We're equipped with premium barbells,plates,Racks and benches.We're prospertius with modern weightlifting equipments.</p>
+                    
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon"><i class="fas fa-running"></i></div>
+                    <h3>Cardio & HIIT Zones</h3>
+                    <h2>Burn fat, boost endurance.....</h2>
+                    <p>Experience high-intensity workouts with treadmills, bikes, rowers, and explosive bodyweight circuits,built for results.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon"><i class="fas fa-tape"></i></div>
+                    <h3>Functional Training Studio</h3>
+                    <h2>Move,Train,Perform.......</h2>
+                    <p>Kettlebells, resistance bands, battle ropes, and agility tools for dynamic workouts.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon"><i class="fas fa-shower"></i></div>
+                    <h3>Locker Rooms & Showers</h3>
+                    <h2>Fresh lockers. Safe storage.</h2>
+                    <p>Spacious, clean locker rooms with private showers, towels, and all necessary amenities.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Nutrition & Supplement Bar</h3>
+                    <h2>Fuel up,Train strong.......</h2>
+                    <p>Premium supplements, protein shakes, and healthy snacks to fuel your workouts and recovery.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon"><i class="fas fa-spa"></i></div>
+                    <h3>Yoga & Mindfulness Zone</h3>
+                    <h2>Calm mind,Strong body.......</h2>
+                    <p>Dedicated space for yoga, meditation, and recovery sessions to balance body and mind.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon"><i class="fas fa-clock"></i></div>
+                    <h3>24/7 Access with Smart Entry</h3>
+                    <h2>Anytime,Smart Entry.......</h2>
+                    <p>Work out on your schedule with secure 24/7 access using our member app.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon"><i class="fas fa-fan"></i></div>
+                    <h3>Air Conditioned Workout Zones</h3>
+                    <h2>Cool Workout Zone.......</h2>
+                    <p>Climate-controlled environment for comfortable training in all seasons.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <p class="quote">"Your body can stand almost anything. It's your mind you have to convince."</p>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery">
+            <h2 class="section-title">Moments from A.S.P. Fitness Center</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Gym interior.jpg" alt="Gym interior">
+                </div>
+                <div class="gallery-item">
+                    <img src="Personal training.jpg" alt="Personal training">
+                </div>
+                <div class="gallery-item">
+                    <img src="weightlifting.jpg" alt="Weightlifting">
+                </div>
+                <div class="gallery-item">
+                    <img src="cardio zone.jpg" alt="Cardio zone">
+                </div>
+                <div class="gallery-item">
+                    <img src="Yooga practising.jpg" alt="Group class">
+                </div>
+                <div class="gallery-item">
+                    <img src="functional training.jpg" alt="Functional training">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stat-item">
+                <div class="stat-icon">🧍</div>
+                <div class="stat-number" data-count="300">0</div>
+                <div class="stat-label">Members</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-number" data-count="2000">0</div>
+                <div class="stat-label">Calories Burned (M+)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">💪</div>
+                <div class="stat-number" data-count="180">0</div>
+                <div class="stat-label">Programs Completed</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">A.S.P. <span>Fitness Center</span></div>
+                <p>Transforming lives through fitness since 2025.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="http://127.0.0.1:5500/Shanuka2.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="http://127.0.0.1:5500/Shanuka4.html">Trainer</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i>+94715539249</p>
+                <p><i class="fas fa-map-marker-alt"></i>12/5 Mahavidiya Ambalantota</p>
+                <p><i class="fas fa-envelope"></i> info@aspfitness.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 A.S.P. Fitness Center. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Simple counter animation for stats
+        document.addEventListener('DOMContentLoaded', function() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const increment = target / speed;
+                let current = 0;
+                
+                const updateCount = () => {
+                    current += increment;
+                    if (current < target) {
+                        stat.textContent = Math.floor(current);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        stat.textContent = target + (stat.getAttribute('data-count') === '2000' ? 'M+' : '+');
+                    }
+                };
+                
+                updateCount();
+            });
+        });
+    </script>
+</body>
+</html>
